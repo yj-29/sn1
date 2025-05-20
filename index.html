@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>神巫 신무; 신내림과 무당</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      display: flex;
+      flex: 1;
+      min-height: calc(100vh - 60px);
+    }
+
+    .sidebar {
+      width: 200px;
+      background-color: #fff;
+      padding: 20px;
+      border-right: 1px solid #ddd;
+    }
+
+    .content {
+      flex: 1;
+      background-color: #fff;
+      padding: 20px;
+    }
+
+    .nav-item {
+      padding: 10px;
+      margin-bottom: 5px;
+      cursor: pointer;
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-item:hover {
+      background-color: #e9ecef;
+      border-color: #ced4da;
+    }
+
+    .nav-item.active {
+      background-color: #007bff;
+      color: white;
+      border-color: #0056b3;
+    }
+
+    .dark-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    .overlay-image {
+      position: absolute;
+      z-index: 1;
+    }
+
+    .corner-top-left {
+      top: 20px;
+      left: 20px;
+      width: 600px;
+    }
+
+    .corner-bottom-right {
+      bottom: 20px;
+      right: 20px;
+      width: 600px;
+    }
+
+    .shin, .mu, .description {
+      position: absolute;
+    }
+
+    .shin {
+      top: 50%;
+      left: 5%;
+      transform: translateY(-50%);
+      height: 65%;
+    }
+
+    .mu {
+      top: 50%;
+      left: 45%;
+      transform: translateY(-50%);
+      height: 60%;
+    }
+
+    .description {
+      top: 39%;
+      right: 7%;
+      transform: translateY(-50%);
+      height: 30%;
+    }
+
+    .hover-container {
+      position: absolute;
+      z-index: 3;
+    }
+
+    .hover-container img {
+      position: absolute;
+      transition: opacity 0.3s ease;
+    }
+
+    .hover-original {
+      opacity: 1;
+      z-index: 3;
+    }
+
+    .hover-replace {
+      opacity: 0;
+      z-index: 4;
+    }
+
+    .hover-container:hover .hover-original {
+      opacity: 0;
+    }
+
+    .hover-container:hover .hover-replace {
+      opacity: 1;
+    }
+
+
+    .dark-overlay.active {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <video src="sntitlevideo.mp4" autoplay muted loop playsinline></video>
+
+
+  <img src="deco1.png" class="overlay-image corner-top-left">
+  <img src="deco2.png" class="overlay-image corner-bottom-right">
+
+
+  <div class="dark-overlay" id="darkOverlay"></div>
+
+
+  <div class="hover-container shin" 
+       onmouseenter="document.getElementById('darkOverlay').classList.add('active')" 
+       onmouseleave="document.getElementById('darkOverlay').classList.remove('active')">
+    <img src="title1.png" class="hover-original" style="height: 100%;">
+    <img src="title3.png" class="hover-replace" style="height: 100%;" onclick="window.open('page-shin.html', '_blank')">
+  </div>
+
+
+  <div class="hover-container mu"
+       onmouseenter="document.getElementById('darkOverlay').classList.add('active')" 
+       onmouseleave="document.getElementById('darkOverlay').classList.remove('active')">
+    <img src="title2.png" class="hover-original" style="height: 100%;">
+    <img src="title4.png" class="hover-replace" style="height: 100%;" onclick="window.open('page-mu.html', '_blank')">
+  </div>
+
+
+  <img src="title5.png" class="overlay-image description">
+
+</body>
+</html>

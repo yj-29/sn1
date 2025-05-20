@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>神 - 신내림</title>
+  <style>
+    @font-face {
+      font-family: 'OKGUNG';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/OKGUNG.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'OKGUNG', sans-serif;
+      height: 100vh;
+      display: flex;
+      color: black;
+    }
+
+    .sidebar {
+      width: 240px;
+      background-color: #b33c3c;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      border-right: 1px solid #d38a8a;
+    }
+
+    .sidebar a {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 26px;
+      color: black;
+      position: relative;
+    }
+
+    .sidebar a:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 15%;
+      width: 70%;
+      height: 1px;
+      background-color: #5c1f1f;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .sidebar a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .content {
+      flex-grow: 1;
+      background-color: #3a0000; 
+      padding: 40px;
+      color: white;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <a href="sinnaerim.html">신내림</a>
+    <a href="sinbyung.html">신병</a>
+    <a href="overseas_sinnaerim.html">해외의 신내림</a>
+    <a href="overseas_similar.html">해외 유사 현상</a>
+  </div>
+
+  <div class="content">
+  </div>
+
+</body>
+</html>
+
